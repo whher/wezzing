@@ -1,0 +1,59 @@
+---
+import { Music2, ExternalLink } from "lucide-astro";
+import { wedding } from "../config/wedding";
+---
+
+<section
+  id="playlist"
+  class="bg-[var(--darksage)] px-6 py-28"
+>
+  <div class="container-wedding max-w-3xl text-center">
+  
+    <div class="rounded-3xl bg-[#1c1c1a] px-8 py-16 text-white md:px-16 reveal">
+      <Music2
+        size={32}
+        strokeWidth={1.5}
+        class="mx-auto mb-8"
+      />
+
+      <p class="mb-4 text-xs uppercase tracking-[0.3em] text-[#aaa]">
+        Our soundtrack
+      </p>
+
+      <h2 class="font-serif text-4xl md:text-5xl">
+        {wedding.spotify.title}
+      </h2>
+
+      <p class="mx-auto mt-6 max-w-md leading-7 text-[#aaa]">
+        {wedding.spotify.description}
+      </p>
+
+      <br>
+
+      <!--
+      <a
+        href={wedding.spotify.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-10 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm text-black transition hover:scale-105"
+      >
+        Listen on Spotify
+
+        <ExternalLink size={16} />
+      </a>
+      -->
+
+    <iframe
+      data-testid="embed-iframe"
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/1lnrUu9HhkN7IEMxf3L8GT?utm_source=generator&theme=0&si=3794c2c7be93436c"
+      width="100%"
+      height="352"
+      frameBorder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+  </div>
+</section>

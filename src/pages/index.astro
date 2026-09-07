@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Countdown from "../components/Countdown.astro";
+import Story from "../components/Story.astro";
+import Venue from "../components/Venue.astro";
+import Hotel from "../components/Hotel.astro";
+import Agenda from "../components/Agenda.astro";
+import RSVP from "../components/RSVP.astro";
+
+import { wedding } from "../config/wedding";
+---
+
+<Layout
+  title={`${wedding.couple.partner1} & ${wedding.couple.partner2} — Our Wedding`}
+  description={`Join ${wedding.couple.partner1} & ${wedding.couple.partner2} for their wedding on ${wedding.date.display}.`}
+>
+  <Navbar />
+
+  <main>
+    <Hero />
+
+    <Countdown />
+
+    <Story />
+
+    <Venue />
+
+    <Hotel />
+
+    <Agenda />
+
+    <RSVP />
+
+  </main>
+
+  <footer
+    class="bg-[var(--darksage)] px-6 py-16 text-center text-[var(--cream)]"
+  >
+    
+    <p class="font-serif text-3xl">
+      {wedding.couple.partner1}
+      <span class="text-[var(--darkrose)]"> & </span>
+      {wedding.couple.partner2}
+    </p>
+
+    <p class="mt-4 text-xs uppercase tracking-[0.3em] opacity-50">
+      {wedding.date.display}
+    </p>
+
+    <p class="mt-8 text-xs opacity-40">
+      Not gonna lie. Made using AI 🤖💗
+    </p>
+
+  </footer>
+</Layout>

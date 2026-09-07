@@ -1,0 +1,202 @@
+---
+import { wedding } from "../config/wedding";
+---
+
+<section
+  id="rsvp"
+  class="bg-[var(--rose)] px-6 py-28 text-[var(--brown)]"
+>
+  <div class="container-wedding max-w-2xl">
+    <div class="mb-12 text-center reveal">
+      <p
+        class="mb-3 text-xs uppercase tracking-[0.3em]"
+      >
+        We hope you can make it
+      </p>
+
+      <h2 class="font-serif text-5xl">
+        RSVP
+      </h2>
+
+      <p class="mt-5 leading-7 opacity-70">
+        Please let us know whether you'll be joining us.
+      </p>
+    </div>
+
+    <form
+      id="rsvp-form"
+      class="space-y-6 reveal"
+    >
+      <div>
+        <label
+          for="name"
+          class="mb-2 block text-sm"
+        >
+          Your name
+        </label>
+
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          class="w-full rounded-xl text-[var(--brown)] border border-black/10 bg-white px-4 py-3 outline-none transition focus:border-[var(--sage)]"
+        />
+      </div>
+
+      <div>
+        <label class="mb-3 block text-sm">
+          Will you attend?
+        </label>
+
+        <div class="flex gap-6">
+          <label class="flex items-center gap-2">
+            <input
+              type="radio"
+              name="attending"
+              value="yes"
+              required
+            />
+            Yes! ❤️
+          </label>
+
+          <label class="flex items-center gap-2">
+            <input
+              type="radio"
+              name="attending"
+              value="no"
+            />
+            Sadly no
+          </label>
+        </div>
+      </div>
+
+<div>
+  <label
+    for="adults"
+    class="mb-2 block text-sm"
+  >
+    Number of adults
+  </label>
+
+  <input
+    id="adults"
+    name="adults"
+    type="number"
+    min="0"
+    max="10"
+    value="1"
+    required
+    class="w-full rounded-xl border text-[var(--brown)] border-black/10 bg-white px-4 py-3 outline-none transition focus:border-[var(--sage)]"
+  />
+</div>
+
+<div>
+  <label
+    for="children"
+    class="mb-2 block text-sm"
+  >
+    Number of children
+  </label>
+
+  <input
+    id="children"
+    name="children"
+    type="number"
+    min="0"
+    max="10"
+    value="0"
+    required
+    class="w-full rounded-xl border text-[var(--brown)] border-black/10 bg-white px-4 py-3 outline-none transition focus:border-[var(--sage)]"
+  />
+</div>
+
+      <div>
+        <label
+          for="dietary"
+          class="mb-2 block text-sm"
+        >
+          Dietary requirements
+        </label>
+
+        <textarea
+          id="dietary"
+          name="dietary"
+          rows="3"
+          class="w-full rounded-xl border text-[var(--brown)] border-black/10 bg-white px-4 py-3 outline-none focus:border-[var(--sage)]"
+        ></textarea>
+      </div>
+
+      <div>
+        <label
+          for="message"
+          class="mb-2 block text-sm"
+        >
+          A message for us
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          class="w-full rounded-xl border text-[var(--brown)] border-black/10 bg-white px-4 py-3 outline-none focus:border-[var(--sage)]"
+        ></textarea>
+      </div>
+
+      <p class="text-xs">
+      Someone say Datenschutz? I am using Google Apps to collect this data. Just so you know.
+      </p>
+
+      <button
+        type="submit"
+        class="w-full rounded-full bg-[var(--cream)] px-6 py-4 text-sm text-[var(--brown)] transition hover:-translate-y-1"
+      >
+        Send RSVP
+      </button>
+
+      <p
+        id="rsvp-status"
+        class="text-center text-sm"
+      ></p>
+    </form>
+  </div>
+</section>
+
+<script define:vars={{ endpoint: wedding.rsvp.googleScriptUrl }}>
+  const form = document.querySelector("#rsvp-form");
+  const status = document.querySelector("#rsvp-status");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!endpoint) {
+      status.textContent =
+        "RSVP is not connected yet. Please configure the Google Sheet endpoint.";
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    const data = Object.fromEntries(formData.entries());
+
+    status.textContent = "Sending...";
+
+    try {
+      await fetch(endpoint, {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(data),
+      });
+
+      status.textContent =
+        "Thank you! We received your RSVP ❤️";
+
+      form.reset();
+    } catch (error) {
+      console.error(error);
+
+      status.textContent =
+        "Something went wrong. Please try again.";
+    }
+  });
+</script>

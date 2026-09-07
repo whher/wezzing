@@ -1,0 +1,41 @@
+---
+import { Shirt } from "lucide-astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section
+  id="dress-code"
+  class="bg-[var(--darksage)] px-6 py-28 text-[var(--cream)]"
+>
+  <div class="container-wedding max-w-2xl text-center">
+    <SectionTitle
+      eyebrow="What to wear"
+      title="Dress Code"
+    />
+
+    <div class="reveal">
+      <Shirt
+        size={32}
+        strokeWidth={1.2}
+        class="mx-auto mb-7"
+      />
+
+      <h3 class="font-serif text-3xl">
+        Elegant & Festive
+      </h3>
+
+      <p
+        class="mx-auto mt-6 max-w-lg text-base leading-8 opacity-70"
+      >
+        Come dressed up and ready to celebrate.
+        Suits, dresses, jumpsuits and your favorite elegant pieces are all welcome.
+      </p>
+
+      <p
+        class="mt-8 text-xs uppercase tracking-[0.25em] text-[var(--sage)]"
+      >
+        No strict rules — just come celebrate with us
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+import { Clock } from "lucide-astro";
+import SectionTitle from "./SectionTitle.astro";
+import { agenda } from "../config/wedding";
+---
+
+<section
+  id="agenda"
+  class="bg-[var(--darksage)] px-6 py-28 text-[var(--cream)]"
+>
+  <div class="container-wedding max-w-3xl">
+
+   <SectionTitle
+      eyebrow="The day"
+      title="Wedding Agenda"
+    />
+
+        <!--PLACEHOLDER WAITING FOR EXACT INFORMATION-->
+    <p class="text-center">
+    Agenda, dress code and music are being discussed. TBA ٩(^ᗜ^ )و ´-
+    </p>
+
+    <!--
+
+    <div class="divide-y divide-black/10">
+      {
+        agenda.map((item) => (
+          <div class="grid grid-cols-[90px_1fr] gap-4 py-7 md:grid-cols-[120px_1fr]">
+            <div class="flex items-start gap-2 pt-1 text-sm">
+              <Clock
+                size={15}
+                strokeWidth={1.5}
+              />
+
+              <span>{item.time}</span>
+            </div>
+
+            <div>
+              <h3 class="font-serif text-2xl">
+                {item.title}
+              </h3>
+
+              <p class="mt-2 text-sm leading-6 opacity-60">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    -->
+  </div>
+
+</section>
