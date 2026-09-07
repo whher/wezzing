@@ -9,5 +9,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: "https://whher.github.io",
-  base: "/project-wezzing",
+  base: "/wezzing",
 });
