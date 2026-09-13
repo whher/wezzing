@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbit&family=Zen+Kaku+Gothic+New&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
 
 @import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Afacad Flux', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Afacad Flux', ui-sans-serif, system-ui, sans-serif;
+}
 
 :root {
   --cream: #f7f2ea;
@@ -22,14 +26,6 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--brown);
-  font-family: 'Orbit', sans-serif;
-}
-
-h1,
-h2,
-h3,
-.font-serif {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
 ::selection {

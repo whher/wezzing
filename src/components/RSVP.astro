@@ -1,4 +1,5 @@
 ---
+import SectionTitle from "./SectionTitle.astro";
 import { wedding } from "../config/wedding";
 ---
 
@@ -8,30 +9,21 @@ import { wedding } from "../config/wedding";
 >
   <div class="container-wedding max-w-2xl">
     <div class="mb-12 text-center reveal">
-      <p
-        class="mb-3 text-xs uppercase tracking-[0.3em]"
-      >
-        We hope you can make it
-      </p>
-
-      <h2 class="font-serif text-5xl">
-        RSVP
-      </h2>
-
-      <p class="mt-5 leading-7 opacity-70">
+      <SectionTitle
+        eyebrow="We hope you can make it"
+        title="RSVP"
+      />
+      <p class="mt-5 text-lg opacity-70">
         Please let us know whether you'll be joining us.
       </p>
     </div>
 
     <form
       id="rsvp-form"
-      class="space-y-6 reveal"
+      class="space-y-6 reveal text-lg"
     >
       <div>
-        <label
-          for="name"
-          class="mb-2 block text-sm"
-        >
+        <label for="name" class="mb-2 block">
           Your name
         </label>
 
@@ -45,7 +37,7 @@ import { wedding } from "../config/wedding";
       </div>
 
       <div>
-        <label class="mb-3 block text-sm">
+        <label class="mb-3 block">
           Will you attend?
         </label>
 
@@ -74,7 +66,7 @@ import { wedding } from "../config/wedding";
 <div>
   <label
     for="adults"
-    class="mb-2 block text-sm"
+    class="mb-2 block"
   >
     Number of adults
   </label>
@@ -94,7 +86,7 @@ import { wedding } from "../config/wedding";
 <div>
   <label
     for="children"
-    class="mb-2 block text-sm"
+    class="mb-2 block"
   >
     Number of children
   </label>
@@ -114,7 +106,7 @@ import { wedding } from "../config/wedding";
       <div>
         <label
           for="dietary"
-          class="mb-2 block text-sm"
+          class="mb-2 block"
         >
           Dietary requirements
         </label>
@@ -130,7 +122,7 @@ import { wedding } from "../config/wedding";
       <div>
         <label
           for="message"
-          class="mb-2 block text-sm"
+          class="mb-2 block"
         >
           A message for us
         </label>
@@ -143,13 +135,13 @@ import { wedding } from "../config/wedding";
         ></textarea>
       </div>
 
-      <p class="text-xs">
+      <p class="text-sm">
       Someone say Datenschutz? I am using Google Apps to collect this data. Just so you know.
       </p>
 
       <button
         type="submit"
-        class="w-full rounded-full bg-[var(--cream)] px-6 py-4 text-sm text-[var(--brown)] transition hover:-translate-y-1"
+        class="w-full rounded-full bg-[var(--cream)]/90 px-6 py-4 text-lg text-[var(--brown)] transition hover:-translate-y-1"
       >
         Send RSVP
       </button>

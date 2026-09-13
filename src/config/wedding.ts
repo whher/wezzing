@@ -30,7 +30,11 @@ export const wedding = {
 
   story: {
     title: 'Our Story',
-    paragraphs: ['meow', 'meow', 'meow'],
+    paragraphs: [
+      'meow',
+      'meow',
+      'meow'
+    ],
   },
 } as const;
 

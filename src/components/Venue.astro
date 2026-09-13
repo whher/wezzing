@@ -1,6 +1,7 @@
 ---
 import { MapPin, Calendar } from "lucide-astro";
 import SectionTitle from "./SectionTitle.astro";
+import Countdown from "./Countdown.astro";
 import { wedding } from "../config/wedding";
 ---
 
@@ -9,6 +10,7 @@ import { wedding } from "../config/wedding";
   class="bg-[var(--darksage)] px-6 py-28"
 >
   <div class="container-wedding">
+
     <div class="text-[var(--cream)]">
       <SectionTitle
         eyebrow="Save the date"
@@ -16,22 +18,23 @@ import { wedding } from "../config/wedding";
       />
     </div>
 
-    <div
-      class="grid overflow-hidden rounded-3xl bg-[var(--cream)] md:grid-cols-2"
-    >
+    <Countdown />
+
+    <div class="grid overflow-hidden rounded-3xl bg-[var(--cream)] md:grid-cols-2">
       <div class="p-8 md:p-12 reveal">
         <div class="mb-8 flex gap-4">
           <Calendar
-            size={22}
+            size={20}
             strokeWidth={1.5}
+            class="opacity-70"
           />
 
           <div>
-            <p class="text-xs uppercase tracking-widest">
+            <p class="text-md uppercase tracking-widest opacity-70">
               Date
             </p>
 
-            <p class="mt-2 font-serif text-2xl">
+            <p class="mt-2 text-3xl">
               {wedding.date.display}
             </p>
           </div>
@@ -39,20 +42,21 @@ import { wedding } from "../config/wedding";
 
         <div class="mb-10 flex gap-4">
           <MapPin
-            size={22}
+            size={20}
             strokeWidth={1.5}
+            class="opacity-70"
           />
 
           <div>
-            <p class="text-xs uppercase tracking-widest">
+            <p class="text-md uppercase tracking-widest opacity-70">
               Location
             </p>
 
-            <p class="mt-2 font-serif text-2xl">
+            <p class="mt-2 text-3xl">
               {wedding.venue.name}
             </p>
 
-            <p class="mt-2 text-sm leading-6 opacity-70">
+            <p class="mt-2 text-lg leading-6">
               {wedding.venue.address}
             </p>
           </div>
@@ -62,10 +66,10 @@ import { wedding } from "../config/wedding";
           href={wedding.venue.googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block rounded-full bg-[var(--brown)] px-6 py-3 text-sm transition hover:-translate-y-1"
+          class="inline-block rounded-full bg-[var(--brown)] px-6 py-3 transition hover:-translate-y-1"
         >
-          <span class="text-[var(--cream)]">
-          Open in Google Maps
+          <span class="text-[var(--cream)] text-lg">
+          Google Maps
           </span>
         </a>
       </div>

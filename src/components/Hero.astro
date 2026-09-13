@@ -15,29 +15,18 @@ import { wedding } from "../config/wedding";
 
   <div class="absolute inset-0 bg-black/30"></div>
 
-  <div
-    class="relative z-10 px-6 text-center text-white"
-  >
-    <p class="mb-6 text-sm uppercase tracking-[0.35em]">
+  <div class="relative z-10 px-6 text-center text-[var(--cream)]">
+    <p class="mb-6 text-md uppercase tracking-[0.35em]">
       We're getting married
     </p>
 
-    <h1
-      class="whitespace-nowrap font-serif text-6xl leading-tight md:text-6xl lg:text-[10rem]"
-    >
-
-   <span class="text-[var(--cream)]">
-    {wedding.couple.partner1}
-    </span>
-
+    <h1 class="whitespace-nowrap text-6xl leading-tight md:text-7xl lg:text-8xl">
+    <span class="text-5xl leading-tight md:text-6xl lg:text-7xl">{wedding.couple.partner1}</span>
     <span class="mx-2 text-[var(--darkrose)]"> & </span>
-
-    <span class="text-[var(--cream)]">
-      {wedding.couple.partner2}
-    </span>
+    {wedding.couple.partner2}
     </h1>
 
-    <p class="mt-8 text-lg">
+    <p class="mt-8 text-2xl">
       {wedding.date.display}
     </p>
 
@@ -45,7 +34,7 @@ import { wedding } from "../config/wedding";
       href="#countdown"
       class="mx-auto mt-14 flex w-fit flex-col items-center gap-2"
     >
-      <span class="text-xs uppercase tracking-[0.25em]">
+      <span class="text-md uppercase tracking-[0.25em]">
         Scroll to explore
       </span>
 
