@@ -7,7 +7,7 @@ export const wedding = {
   date: {
     // TODO: Exact Dates and Time Zones
     datetime: '2027-07-03T14:00:00+02:00',
-    display: '03 Juli 2027',
+    display: '03 July 2027',
   },
 
   venue: {
