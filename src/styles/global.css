@@ -48,16 +48,105 @@ a {
   margin-inline: auto;
 }
 
+
+/* --------------------------------------------------
+   Navbar
+   -------------------------------------------------- */
+
+/*
+ * Default state:
+ * Navbar is sitting on top of the hero image.
+ *
+ * Transparent background
+ * White text
+ * White hearts
+ */
+#navbar {
+  color: white;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease,
+    backdrop-filter 300ms ease;
+}
+
+
+/*
+ * The "&" in the couple's name.
+ */
+#navbar .navbar-accent {
+  color: white;
+
+  transition: color 300ms ease;
+}
+
+
+/*
+ * The hearts on the right.
+ */
+#navbar .navbar-hearts {
+  color: white;
+
+  transition: color 300ms ease;
+}
+
+
+/*
+ * Scrolled state:
+ * The hero is no longer visible.
+ *
+ * This restores the original navbar design.
+ */
+#navbar.scrolled {
+  color: var(--brown);
+  background: rgb(247 242 234 / 80%);
+  border-bottom-color: rgb(0 0 0 / 5%);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+/*
+ * "&" after scrolling.
+ */
+#navbar.scrolled .navbar-accent {
+  color: var(--darkrose);
+}
+
+
+/*
+ * Hearts after scrolling.
+ */
+#navbar.scrolled .navbar-hearts {
+  color: var(--darkrose);
+}
+
+
+/* --------------------------------------------------
+   Reveal animations
+   -------------------------------------------------- */
+
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 700ms ease, transform 700ms ease;
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* --------------------------------------------------
+   Other styles
+   -------------------------------------------------- */
 
 textarea {
   color: var(--cream);

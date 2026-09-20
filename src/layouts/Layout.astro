@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = "Wan-Hua & Max — Wezzing",
+  title = "Wan-Hua & Max — Wedding",
   description = "We are getting married!",
 } = Astro.props;
 ---
@@ -24,9 +24,15 @@ const {
 
     <title>{title}</title>
 
-    <meta name="description" content={description} />
+    <meta
+      name="description"
+      content={description}
+    />
 
-    <meta name="theme-color" content="#f7f2ea" />
+    <meta
+      name="theme-color"
+      content="#f7f2ea"
+    />
 
     <slot name="head" />
   </head>
@@ -35,6 +41,10 @@ const {
     <slot />
 
     <script>
+      // --------------------------------------------------
+      // Reveal animations
+      // --------------------------------------------------
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -51,6 +61,37 @@ const {
       document
         .querySelectorAll(".reveal")
         .forEach((element) => observer.observe(element));
+
+
+      // --------------------------------------------------
+      // Navbar: transparent over hero / solid after hero
+      // --------------------------------------------------
+
+      const navbar = document.querySelector("#navbar");
+      const hero = document.querySelector("#top");
+
+      if (navbar && hero) {
+        const navbarObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Hero is visible:
+                // transparent navbar + white text
+                navbar.classList.remove("scrolled");
+              } else {
+                // Hero is no longer visible:
+                // restore normal navbar design
+                navbar.classList.add("scrolled");
+              }
+            });
+          },
+          {
+            threshold: 0,
+          }
+        );
+
+        navbarObserver.observe(hero);
+      }
     </script>
   </body>
 </html>
