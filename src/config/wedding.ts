@@ -32,7 +32,8 @@ export const wedding = {
     title: 'Our Story',
     paragraphs: [
       'It started with two people, one taxi, and an unsuccessful search for glue to fix her luggage. It was a Feiertag. But they were too busy talking to notice that the shops were closed.',
-      'Maybe they did find glue after all. Just not the kind that fixes luggage... (ˊ•͈ ◡ •͈ˋ)'
+      'Maybe they did find glue after all. Just not the kind that fixes luggage...',
+      '(ˊ•͈ ◡ •͈ˋ)'
     ],
   },
 } as const;
