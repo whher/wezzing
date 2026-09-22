@@ -8,6 +8,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: "https://whher.github.io",
-  base: "/wezzing",
+  site: "https://www.wan-in-a-milian.de",
 });
