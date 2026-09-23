@@ -26,6 +26,7 @@ export const wedding = {
 
   rsvp: {
     googleScriptUrl: 'https://script.google.com/macros/s/AKfycbz3fyGCUiWbK_wsThoXaF5BkYULdQcueWmNTF16gVJxXmPzldEIrdvSC3BePseKJgy1HA/exec',
+    deadline: '31 December 2026'
   },
 
   story: {
