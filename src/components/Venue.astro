@@ -3,12 +3,22 @@ import { MapPin, Calendar } from "lucide-astro";
 import SectionTitle from "./SectionTitle.astro";
 import Countdown from "./Countdown.astro";
 import { wedding } from "../config/wedding";
+import { Image } from 'astro:assets';
+import happy from '../assets/happy.png';
 ---
 
 <section
   id="wedding"
   class="bg-[var(--darksage)] px-6 py-28"
 >
+  <div class="flex items-center justify-center mb-10">
+      <Image
+        src={happy}
+        alt="Red Double Happiness Emblem"
+        style="width: 80%; max-width: 128px; height: auto;"
+      />
+  </div>
+
   <div class="container-wedding">
 
     <div class="text-[var(--cream)]">
