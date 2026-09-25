@@ -83,17 +83,6 @@ a {
   transition: color 300ms ease;
 }
 
-
-/*
- * The hearts on the right.
- */
-#navbar .navbar-hearts {
-  color: white;
-
-  transition: color 300ms ease;
-}
-
-
 /*
  * Scrolled state:
  * The hero is no longer visible.
@@ -118,11 +107,49 @@ a {
 }
 
 
-/*
- * Hearts after scrolling.
- */
-#navbar.scrolled .navbar-hearts {
-  color: var(--darkrose);
+.navbar-emblem {
+  position: relative;
+  width: 36px;
+  height: 36px;
+
+}
+
+.navbar-emblem img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.navbar-emblem-rose {
+  display: none;
+}
+
+/* Hero / top of page */
+#navbar {
+  color: white;
+}
+
+#navbar .navbar-emblem-white {
+  display: block;
+}
+
+#navbar .navbar-emblem-rose {
+  display: none;
+}
+
+/* After scrolling */
+#navbar.scrolled {
+  background: rgb(247 242 234 / 80%);
+  backdrop-filter: blur(12px);
+  color: var(--brown);
+}
+
+#navbar.scrolled .navbar-emblem-white {
+  display: none;
+}
+
+#navbar.scrolled .navbar-emblem-rose {
+  display: block;
 }
 
 

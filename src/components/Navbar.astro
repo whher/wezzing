@@ -1,6 +1,9 @@
 ---
 import { Heart } from "lucide-astro";
 import { wedding } from "../config/wedding";
+import { Image } from 'astro:assets';
+import happyWhite from "../assets/happy-white.png";
+import happyRose from "../assets/happy-darkrose.png";
 ---
 
 <nav
@@ -20,18 +23,31 @@ import { wedding } from "../config/wedding";
       <a href="#rsvp" class="hover:opacity-60">RSVP</a>
     </div>
 
-    <div class="navbar-hearts flex gap-2 px-6">
-      <p>喜喜</p>
-      <!---
-      <Heart
-        size={18}
-        strokeWidth={1.5}
-      />
-      <Heart
-        size={18}
-        strokeWidth={1.5}
-      />
-      --->
-    </div>
+<div class="navbar-emblem">
+  <Image
+    src={happyWhite}
+    alt="Double happiness emblem"
+    class="navbar-emblem-white"
+  />
+
+  <Image
+    src={happyRose}
+    alt="Double happiness emblem"
+    class="navbar-emblem-rose"
+  />
+</div>
   </div>
 </nav>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const hero = document.getElementById("hero");
+
+  window.addEventListener("scroll", () => {
+    if (!navbar || !hero) return;
+
+    const scrolled = window.scrollY >= hero.offsetHeight;
+
+    navbar.classList.toggle("scrolled", scrolled);
+  });
+</script>
